@@ -9,11 +9,11 @@ class RestauranteCaseiro
 {
     public:
         RestauranteCaseiro();
-        int adicionaAoPedido(Pedido p, int nqt); //nqt = nova quantidade
-        double calculaTotalRestaurante(double v);
+        void adicionaAoPedido(Pedido p, int nqt); //nqt = nova quantidade
+        double calculaTotalRestaurante();
 
     private:
-        Pedido pedido;
+        MesaDeRestaurante mesa[10];
 
 };
 
