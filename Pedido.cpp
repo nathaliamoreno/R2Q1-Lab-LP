@@ -1,20 +1,35 @@
-#include "RestauranteCaseiro.h"
 #include "Pedido.h"
-#include "MesaDeRestaurante.h"
 
-
-RestauranteCaseiro::RestauranteCaseiro(){
+Pedido::Pedido(){
 
 }
-int RestauranteCaseiro::adicionaAoPedido(Pedido p, int NovaQt){
-    this->pedido = p; //recebendo as informacoes do pedido da main que quer modificar
-    pedido.setQuantidade(NovaQt);
-    return pedido.getQuantidade(); //retornando o novo valor
+Pedido::Pedido(int n, std::string d, int q, double p){
+    numero = n;
+    descricao = d;
+    quantidade = q;
+    preco = p;
 }
-double RestauranteCaseiro::calculaTotalRestaurante(double valor){ // valor do parametro com valor = ao MesaDeRestaurante
-    double totalRest =0; //total restaurante
-
-    totalRest += valor; //pega o valor da classe MesaDeRestaurante e soma ao total.
-
-    return totalRest;
+void Pedido::setNumero(int n){
+    numero = n;
+}
+void Pedido::setDescricao(std::string d){
+    descricao = d;
+}
+void Pedido::setQuantidade(int q){
+    quantidade = q;
+}
+void Pedido::setPreco(double p){
+    preco = p;
+}
+int Pedido::getNumero(){
+    return numero;
+}
+std::string Pedido::getDescricao(){
+    return descricao;
+}
+int Pedido::getQuantidade(){
+    return quantidade;
+}
+double Pedido::getPreco(){
+    return preco;
 }
