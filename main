@@ -8,15 +8,15 @@ using namespace std;
 int main()
 {
     int nq; //nq = nova quantidade
-    Pedido p[100] = Pedido();
+    Pedido p[100];
     p[0] = Pedido(1, "Descricao1", 1, 4.5); //numero, decricao, quantidade, valor
     p[1] = Pedido(2, "Descricao2", 3, 6.5);
 
-
-    MesaDeRestaurante M;
-    M.adicionaAoPedido(p[0]);
-    M.adicionaAoPedido(p[1]);
     RestauranteCaseiro pM; //pM = pedido mesa
+    //MesaDeRestaurante M;
+    pM.adicionaAoPedido(p[0],0);
+    pM.adicionaAoPedido(p[1],1);
+
 
     //TESTANDO VALORES INICIAIS
 
@@ -28,24 +28,16 @@ int main()
     cout <<  "_________________________\n" << endl;
 
     //IMPRIMINDO VALORES
-    cout << "Total do pedido: R$ " << M.calculaTotal()<<endl;
-    cout << "Total Geral: R$ " << pM.calculaTotalRestaurante(M.calculaTotal()) << endl;
+    cout << "Total do pedido: R$ " << pM.calculaTotalRestaurante() << endl;
+  //  cout << "Total Geral: R$ " << pM.calculaTotalRestaurante(M.calculaTotal()) << endl;
 
+    pM.calculaTotalRestaurante();
 
-     // O pM.adcionaAoPedido recebe o identificador do numero do pedido e a quantidade que deseja modificar
-    cout << "\nTestando quantidade modificada: " << pM.adicionaAoPedido(p[1], 5)<< endl; //testando
-    nq = pM.adicionaAoPedido(p[1], 5);
-    p[1].setQuantidade(nq);
+    cout << "Total do pedido: R$ " <<  pM.calculaTotalRestaurante() << endl;
+   // cout << "Valor total atualizado: R$ "<< pM.calculaTotalRestaurante(M.calculaTotal()) << endl;
 
-    /* o p[1].setQuantidade tá setando o valor corrigido, testei o get e set dele,
-     * porem, no CalculaTotal tá imprimindo com o valor antigo.
-     * Acha o erro!!!*/
-
-    cout << "Total do pedido: R$ " << M.calculaTotal()<<endl;
-    cout << "Valor total atualizado: R$ "<< pM.calculaTotalRestaurante(M.calculaTotal()) << endl;
-
-    M.zeraPedidos(); //AQUI TA OK \0/
-    cout << "\nTestando zeraPedidos: R$ " << M.calculaTotal()<<endl;
+    //M.zeraPedidos(); //AQUI TA OK \0/
+    cout << "\nTestando zeraPedidos: R$ " <<  pM.calculaTotalRestaurante() << endl;
 
 
     return 0;
