@@ -11,6 +11,8 @@ class RestauranteCaseiro
         RestauranteCaseiro();
         void adicionaAoPedido(Pedido p, int m); //nqt = nova quantidade
         double calculaTotalRestaurante();
+        double calculaTotalMesa(int m);
+        void zeraPedidosMesa(int m);
 
     private:
         MesaDeRestaurante mesa[10];
