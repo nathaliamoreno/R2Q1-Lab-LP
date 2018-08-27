@@ -1,4 +1,5 @@
 #include "MesaDeRestaurante.h"
+#include <iostream>
 
 using namespace std;
 MesaDeRestaurante::MesaDeRestaurante(){
@@ -7,18 +8,18 @@ MesaDeRestaurante::MesaDeRestaurante(){
 void MesaDeRestaurante::adicionaAoPedido(Pedido p){
     int i,q;
     std::string str1, str2;
-    for(i = 0; i < 10; i++){
-            str1 = pedido[i].getDescricao();
-            str2 = p.getDescricao();
+    str2 = p.getDescricao();
+    for(i = 0; i < iAtual; i++){
+        str1 = pedido[i].getDescricao();
         if(str1 == str2){
             q = pedido[i].getQuantidade();
-            q++;
+            q = q + p.getQuantidade();
             pedido[i].setQuantidade(q);
-        }else{
-            pedido[iAtual] = p;
-
+            return ;
         }
     }
+
+    pedido[iAtual] = p;
     iAtual++;
 }
 void MesaDeRestaurante::zeraPedidos(){
