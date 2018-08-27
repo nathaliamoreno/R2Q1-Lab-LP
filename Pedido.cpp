@@ -33,3 +33,4 @@ int Pedido::getQuantidade(){
 double Pedido::getPreco(){
     return preco;
 }
+ 
