@@ -9,6 +9,7 @@ class MesaDeRestaurante
         void adicionaAoPedido(Pedido p);
         void zeraPedidos();
         double calculaTotal();
+        int AtualizaI();
 
     private:
         Pedido pedido[10];
