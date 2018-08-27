@@ -9,7 +9,7 @@ class RestauranteCaseiro
 {
     public:
         RestauranteCaseiro();
-        void adicionaAoPedido(Pedido p, int nqt); //nqt = nova quantidade
+        void adicionaAoPedido(Pedido p, int m); //nqt = nova quantidade
         double calculaTotalRestaurante();
 
     private:
